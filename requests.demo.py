@@ -1,4 +1,8 @@
 import requests
+from requests import utils
+
+
+
 url = 'http://127.0.0.1:8787//dar/user/login'
 
 header = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
@@ -9,9 +13,9 @@ data = {
 }
 
 #1、-------------------------post-----------------
-res = requests.post(url=url,data=data)
-
-print(res.text)
+# res = requests.post(url=url,data=data)
+#
+# print(res.text)
 
 #2、------------------------get--------------------------------
 
@@ -33,6 +37,13 @@ jsondata ={
 #3、------------------------requests.session()创建会话管理--------------------------------
 session = requests.session()
 
-res3 = session.request(method='get',url=url_2,params=jsondata,headers=header_2)
+# res3 = session.request(method='get',url=url_2,params=jsondata,headers=header_2)
+#
+# print(res3.json())
 
-print(res3.json())
+#4、cookie
+#获取接口的cookie
+result = session.request(method='post',url=url, data=data)
+
+get_cookie = requests.utils.dict_from_cookiejar(result.cookies)
+print(get_cookie)
