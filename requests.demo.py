@@ -47,4 +47,3 @@ result = session.request(method='post',url=url, data=data)
 
 get_cookie = requests.utils.dict_from_cookiejar(result.cookies)
 print(get_cookie)
-跑、
