@@ -27,23 +27,23 @@ jsondata ={
 "size":20
 }
 
-# res2 = requests.get(url=url_2,params=jsondata,headers=header_2)
-# print(res2.text)
+res2 = requests.get(url_2,jsondata,headers=header_2)
+print(res2.text)
 
 
 
 
 
 #3、------------------------requests.session()创建会话管理--------------------------------
-session = requests.session()
-
+# session = requests.session()
+#
 # res3 = session.request(method='get',url=url_2,params=jsondata,headers=header_2)
 #
 # print(res3.json())
 
-#4、cookie
-#获取接口的cookie
-result = session.request(method='post',url=url, data=data)
-
-get_cookie = requests.utils.dict_from_cookiejar(result.cookies)
-print(get_cookie)
+#4、cookies
+# #获取接口的cookie
+# result = session.request(method='post',url=url, data=data)
+#
+# get_cookie = requests.utils.dict_from_cookiejar(result.cookies)
+# print(get_cookie)
