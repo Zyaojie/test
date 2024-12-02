@@ -43,7 +43,7 @@ class ReadyamlData:
             # file =  open(file_path,'a（a=追加读写，w=清空读写）',encoding='utf-8')    使用此方法打开文件后需要在最后添加关闭文件的操作
                 # finally:
                 #     file.close()
-            with open(file_path, 'a', encoding='utf-8') as file:    #使用此方法打开文件不需要进行关闭文件的操作
+            with open(file_path, 'w', encoding='utf-8') as file:    #使用此方法打开文件不需要进行关闭文件的操作
 
                 if isinstance(value,dict):
                     write_data = yaml.dump(value,allow_unicode=True,sort_keys=False)
@@ -53,6 +53,24 @@ class ReadyamlData:
         except  Exception as e:
             print(e)
 
+    def get_extract_yaml(self,node_name):
+        '''
+        读取接口提取的变量值
+        :param node_name:yaml中的key值
+        :return:
+        '''
+        if os.path.exists('extract.yaml'):
+            pass
+        else:
+            print('extract.yaml不存在')
+            file = open('extract.yaml','w')
+            file.close()
+            print('extract.yaml创建成功')
+
+
+        with open('extract.yaml','r',encoding='utf-8') as rf:
+            extract_data = yaml.safe_load(rf)
+            return extract_data[node_name]
 
 
 
@@ -67,16 +85,18 @@ if __name__ == '__main__':
     from sendrequests import SendRequest
     send = SendRequest()
     send = send.post(url=new_url,data=data,header=header)
-    print(send)
+    # print(send)
 
-    token = send.get('token')
-
-    write_data = {}
-    write_data['Token'] = token
+    # token = send.get('token')
+    #
+    # write_data = {}
+    # write_data['Token'] = token
 
     read = ReadyamlData()
-    read.write_yaml_data(write_data)
+    # read.write_yaml_data(write_data)
 
+    re = read.get_extract_yaml('token')
+    print(re)
 
 
     #pyrhon常用的数据类型：str(字符串) list（列表） dict（字典） set（集合） tuple（元祖）
