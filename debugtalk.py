@@ -12,7 +12,7 @@ class Debugtaik:
 
     def get_extract_order_data(self,data,randoms):
         if randoms not in [0,-1,-2]:
-            return data[randoms -1]
+            return data[randoms - 1]
 
 
     def get_extract_data(self, node_name, randoms=None):
@@ -25,7 +25,7 @@ class Debugtaik:
 
         data = self.read.get_extract_yaml(node_name)
         if randoms is not None:
-            irandoms = int(randoms)
+            randoms = int(randoms)
             data_value = {
                 randoms: self.get_extract_order_data(data,randoms),
                 0 : random.choice(data),#随机读取
