@@ -12,7 +12,7 @@ class Debugtaik:
 
     def get_extract_order_data(self,data,randoms):
         if randoms not in [0,-1,-2]:
-            return data[randoms - 1]
+            return data[randoms -1]
 
 
     def get_extract_data(self, node_name, randoms=None):
@@ -43,6 +43,6 @@ class Debugtaik:
 
 if __name__ == '__main__':
     debug = Debugtaik()
-    print(debug.get_extract_data('product_id',1))
+    print(debug.get_extract_data('product_id',-1))
 
 
