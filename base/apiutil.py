@@ -1,7 +1,7 @@
 import json
 
-from readyaml import ReadyamlData,get_testcase_yaml
-from debugtalk import Debugtaik
+from common.readyaml import ReadyamlData,get_testcase_yaml
+from common.debugtalk import Debugtaik
 
 class BaceRequsts:
 
@@ -39,7 +39,7 @@ class BaceRequsts:
 
 
 if __name__ == '__main__':
-    data = get_testcase_yaml('login.yaml')[0]
+    data = get_testcase_yaml('../tastcase/Login/login.yaml')[0]
     print(data)
     base = BaceRequsts()
     base.replace_load(data)

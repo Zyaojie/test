@@ -7,6 +7,8 @@ import os
 
 import yaml
 
+from sendrequests import  SendRequest
+from conf.setting import FILE_PATA
 
 def get_testcase_yaml(file):
     '''
@@ -36,7 +38,7 @@ class ReadyamlData:
         ：return：
         '''
         file = None
-        file_path = r'extract.yaml'
+        file_path = FILE_PATA['extract']
         if not os.path.exists(file_path):
             os.system(file_path)
         try:
@@ -59,16 +61,16 @@ class ReadyamlData:
         :param node_name:yaml中的key值
         :return:
         '''
-        if os.path.exists('extract.yaml'):
+        if os.path.exists('../extract.yaml'):
             pass
         else:
             print('extract.yaml不存在')
-            file = open('extract.yaml','w')
+            file = open('../extract.yaml', 'w')
             file.close()
             print('extract.yaml创建成功')
 
 
-        with open('extract.yaml','r',encoding='utf-8') as rf:
+        with open('../extract.yaml', 'r', encoding='utf-8') as rf:
             extract_data = yaml.safe_load(rf)
             return extract_data[node_name]
 
@@ -76,7 +78,7 @@ class ReadyamlData:
 
 
 if __name__ == '__main__':
-    res = get_testcase_yaml('login.yaml')[0]
+    res = get_testcase_yaml('../tastcase/Login/login.yaml')[0]
     url = res['baseInfo']['url']
     new_url = 'http://127.0.0.1:8787//'+url
     method = res['baseInfo']['method']
