@@ -34,12 +34,19 @@ class BaceRequsts:
                 extract_data = getattr(Debugtaik(),func_name)(*funcs_params.split(',') if funcs_params else '')
                 print(extract_data)
 
+        if data and isinstance(data,dict):
+            data = json.loads(str_data)
+        else:
+            data = str_data
+
+        return data
+
 
 
 
 
 if __name__ == '__main__':
-    data = get_testcase_yaml('../tastcase/Login/login.yaml')[0]
+    data = get_testcase_yaml('../testcase/Login/login.yaml')[0]
     print(data)
     base = BaceRequsts()
     base.replace_load(data)

@@ -40,4 +40,4 @@ class OperationConfig:
         return self.get_section_for_data('api_envi', option)
 if __name__ == '__main__':
     oper = OperationConfig()
-    print(oper.get_section_for_data('api_envi','host'))
+    print(oper.get_envi('host'))

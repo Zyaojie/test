@@ -78,7 +78,7 @@ class ReadyamlData:
 
 
 if __name__ == '__main__':
-    res = get_testcase_yaml('../tastcase/Login/login.yaml')[0]
+    res = get_testcase_yaml('../testcase/Login/login.yaml')[0]
     url = res['baseInfo']['url']
     new_url = 'http://127.0.0.1:8787//'+url
     method = res['baseInfo']['method']
