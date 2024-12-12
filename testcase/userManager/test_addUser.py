@@ -18,6 +18,5 @@ class TestAddUser:
         print('删除用户 ')
 
 
-    @pytest.mark.skip(reason='跳过')
     def test_case03(self):
         print('修改用户')
