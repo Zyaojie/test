@@ -12,14 +12,17 @@ import pytest
 
 class TestLogin:
 
-    def test_case01(self):
+
+    @pytest.mark.parametrize('params',('小张','小王','小李'))
+    def test_case01(self,params):
         print('用例1')
+        print('获取到的参数为：',params)
 
 
-    def test_case02(self):
-        print('用例2')
-
-
-    def test_case03(self):
-        print('用例3')
+    # def test_case02(self):
+    #     print('用例2')
+    #
+    #
+    # def test_case03(self):
+    #     print('用例3')
 
