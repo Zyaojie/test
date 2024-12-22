@@ -7,22 +7,58 @@ import time
 
 import pytest
 
-
+from common.readyaml import get_testcase_yaml
+from common.sendrequests import SendRequest
 
 
 class TestLogin:
 
 
-    @pytest.mark.parametrize('params',('小张','小王','小李'))
+    @pytest.mark.parametrize('params',get_testcase_yaml('./testcase/login/login.yaml'))
     def test_case01(self,params):
-        print('用例1')
-        print('获取到的参数为：',params)
+        url = params['baseInfo']['url']
+        new_url = 'http://127.0.0.1:8787' + url
+
+        method = params['baseInfo']['method']
+        headers = params['baseInfo']['header']
+
+        data = params['testCase'][0]['data']
+
+        send = SendRequest()
+
+        res = send.run_main(url=new_url,data=data,header=None,method=method)
+        print('接口实际返回值：',res)
+        assert res['msg'] == '登录成功'
+
+    @pytest.mark.parametrize('params', get_testcase_yaml('./testcase/login/login.yaml'))
+    def test_case02(self, params):
+        url = params['baseInfo']['url']
+        new_url = 'http://127.0.0.1:8787' + url
+
+        method = params['baseInfo']['method']
+        headers = params['baseInfo']['header']
+
+        data = {'user_name':'test02','passwd':'123'}
+
+        send = SendRequest()
+
+        res = send.run_main(url=new_url, data=data, header=None, method=method)
+        print('接口实际返回值：', res)
+        assert res['msg'] == '登录成功'
 
 
-    # def test_case02(self):
-    #     print('用例2')
-    #
-    #
-    # def test_case03(self):
-    #     print('用例3')
 
+    def test_case03(self, params):
+        url = params['baseInfo']['url']
+        new_url = 'http://127.0.0.1:8787' + url
+
+        method = params['baseInfo']['method']
+        headers = params['baseInfo']['header']
+
+        data = {'user_name':'test01','passwd':'admin123'}
+
+        send = SendRequest()
+
+        res = send.run_main(url=new_url, data=data, header=None, method=method)
+        print('接口实际返回值：', res)
+        assert res['msg'] == '登录失败,用户名或密码错误'
