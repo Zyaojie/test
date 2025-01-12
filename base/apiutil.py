@@ -4,11 +4,11 @@ from common.readyaml import ReadyamlData,get_testcase_yaml
 from common.debugtalk import Debugtaik
 from conf.operationConfig import OperationConfig
 import allure
-class BaceRequsts:
+class RequestsBase(object):
 
     def __init__(self):
         self.read = ReadyamlData()
-        self.cof = OperationConfig()
+        self.conf = OperationConfig()
 
 
     def replace_load(self,data):
@@ -121,8 +121,18 @@ class BaceRequsts:
 
 
 
+    def specifcation_yaml(self,case_info):
+        """
+        规范yaml接口测试数据的写法
+        :param case_info:list类型，调试取case_info[0]
+        :return:
+        """
+        base_url = self.conf.get_envi('host')
+
+
+
 if __name__ == '__main__':
+    req = RequestsBase()
     data = get_testcase_yaml('../testcase/Login/login.yaml')[0]
-    print(data)
-    base = BaceRequsts()
-    base.replace_load(data)
+    # req.replace_load(data)
+    print(req.specifcation_yaml(data))

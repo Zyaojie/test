@@ -3,7 +3,7 @@
 # @Author : 17507
 # @File : debugtalk
 # @Project : api-test
-from readyaml import ReadyamlData
+from common.readyaml import ReadyamlData
 import random
 
 
