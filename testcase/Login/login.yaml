@@ -10,17 +10,18 @@
       data:
         user_name: test01
         passwd: admin123
-        t: ${get_stamp_time()}
       validation:
-        - contains: {'msg': '登录成功'}
+        - contains: {'error_code': none}
+        - eq: {'msg': '登录成功'}
       extract:
         token: $.token
 
-    - case_name: 用户名和密码正确登录
+    - case_name: 用户名或密码错误校验
       data:
-        user_name: test01
+        user_name: test02
         passwd: admin123
       validation:
-        - contains: {'msg': '登录成功'}
-      extract:
+        - contains: {'error_code': none}
+        - eq: {'msg': '登录成功'}
+      extract_list:
         token: $.token

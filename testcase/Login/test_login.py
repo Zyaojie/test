@@ -38,7 +38,7 @@ class TestLogin:
         method = params['baseInfo']['method']
         headers = params['baseInfo']['header']
 
-        data = {'user_name':'test02','passwd':'123'}
+        data = {'user_name':'test01','passwd':'123'}
 
         send = SendRequest()
 
@@ -46,8 +46,7 @@ class TestLogin:
         print('接口实际返回值：', res)
         assert res['msg'] == '登录成功'
 
-
-
+    @pytest.mark.parametrize('params', get_testcase_yaml('./testcase/login/login.yaml'))
     def test_case03(self, params):
         url = params['baseInfo']['url']
         new_url = 'http://127.0.0.1:8787' + url
@@ -55,7 +54,7 @@ class TestLogin:
         method = params['baseInfo']['method']
         headers = params['baseInfo']['header']
 
-        data = {'user_name':'test01','passwd':'admin123'}
+        data = {'user_name':'test03','passwd':'admin123'}
 
         send = SendRequest()
 
