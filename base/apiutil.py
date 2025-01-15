@@ -53,23 +53,21 @@ class RequestsBase(object):
         method = case_info['baseInfo']['method']
         header = case_info['baseInfo']['header']
 
+        case_info =case_info['baseInfo']['cookies']
+
         for tc in case_info['testCase']:
             case_name = tc.pop('case_name')
             validation = tc.pop('validation')
             extract = tc.pop('extract',None)
             extract_list = tc.pop('extract_list',None)
-            print(tc)
             for key,value in tc.items():
                 if key in params_type:
                     tc[key] = self.replace_load(value)
-            res = self.send.run_main(url=url,data=tc['data'],header=None,method=method)
+            res = self.send.run_main(name=api_name,url = url,case_name= case_name,header=header,merhod=method,cookies=)
             print(res)
-
-
-
 
 if __name__ == '__main__':
     req = RequestsBase()
     data = get_testcase_yaml('../testcase/Login/login.yaml')[0]
-    # # req.replace_load(data)
+    # req.replace_load(data)
     print(req.specifcation_yaml(data))

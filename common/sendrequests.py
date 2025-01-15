@@ -1,45 +1,45 @@
-import requests
+import json
 
+import requests
+from common.recordlog import logs
+from requests import utils
+from  common.readyaml import ReadyamlData
+import pytest
 
 class SendRequest(object):
+
     '''
     封装接口的请求
     '''
 
     def __init__(self):
-        pass
+        self.read = ReadyamlData()
 
-    def get(self, url, data, header):
-        '''
-        封装get请求
-        :param url: 请求地址
-        :param data: 请求参数
-        :param headers: 请求头
-        :return:
-        '''
-        if header is None:
-            res = requests.get(url=url, params=data)
-        else:
-            res = requests.get(url=url, params=data, headers=header)
+    def send_request(self,**kwargs):
+        cookie ={}
+        session = requests.session()
+        result = None
+        try:
+            result = session.request(**kwargs)
+            set_cookies = requests.utils.dict_from_cookiejar(result.cookies)
+            if set_cookies:
+                cookie['Cookie'] = set_cookies
+                self.read.write_yaml_data(set_cookies)
+                logs.info(f'cookie:{cookie}')
+            logs.info(f'接口实际返回信息：{result}')
+        except requests.exceptions.ConnectionError:
+            logs.error('接口连接服务器异常！！！')
+            pytest.fail('接口请求异常，可能是request的连接数过多或者请求速度过快导致系统报错')
+        except requests.exceptions.HTTPError:
+            logs.error('http异常')
+            pytest.fail('http请求异常')
+        except requests.exceptions.RequestException as e:
+            logs.error(e)
+            pytest.fail('请求异常，请检查系统或数据是否正常')
 
-        return res.json()
+        return result
 
-    def post(self, url, data, header):
-        '''
-        封装post请求
-        :param url: 请求地址
-        :param data: 请求参数
-        :param headers: 请求头
-        :return:
-        '''
-        if header is None:
-            res = requests.post(url, data, verify=False)
-        else:
-            res = requests.post(url, data, headers=header, verify=False)
-
-        return res.json()
-
-    def run_main(self, url, data, header, method):
+    def run_main(self, name,url, case_name, header, merhod,cookies=None,file=None,**kwargs):
         '''
         接口请求主函数
         :param url:请求地址
@@ -48,15 +48,29 @@ class SendRequest(object):
         :param method: 请求方法
         :return:
         '''
-        res = None
-        if method.upper() == 'GET':
-            res = self.get(url, data, header)
-        elif method.upper() == 'POST':
-            res = self.post(url, data, header)
-        else:
-            print('暂时只支持get/post请求！')
-        return res
+        try:
+        #收集报告日志信息
+            logs.info(f'接口名称：{name}')
+            logs.info(f'接口请求地址：{url}')
+            logs.info(f'请求方法：{merhod}')
+            logs.info(f'测试用例名称：{case_name}')
+            logs.info(f'请求头：{header}')
+            logs.info(f'Cookies：{cookies}')
+            #处理请求参数
+            req_params = json.dumps(kwargs,ensure_ascii=False)
+            if 'data' in kwargs.keys():
+                logs.info(f'请求参数:{kwargs}')
+            elif 'json' in kwargs.keys():
+                logs.info(f'请求参数:{kwargs}')
+            elif 'params' in kwargs.keys():
+                logs.info(f'请求参数:{kwargs}')
+        except Exception as e:
+            logs.error(e)
 
+        response = self.send_request(merhod = merhod ,url = url ,headers=header,cookies = cookies,files = file,verify=False,
+                          **kwargs)
+
+        return response
 
 if __name__ == '__main__':
     url = 'http://127.0.0.1:8787//dar/user/login'
