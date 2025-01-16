@@ -37,6 +37,12 @@ class Recordlog:
 
             #在将相应的handler添加到logger
             logger.addHandler(fh)
+
+            #将日志输出到控制台上
+            sh = logging.StreamHandler()
+            sh.setLevel(setting.STREAM_LOG_LEVEL)
+            sh.setFormatter(log_format)
+            logger.addHandler(sh)
         return logger
 
 apilog = Recordlog()

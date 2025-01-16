@@ -6,8 +6,6 @@
 import os
 
 import yaml
-
-from common.sendrequests import SendRequest
 from conf.setting import FILE_PATA
 
 def get_testcase_yaml(file):

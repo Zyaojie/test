@@ -3,7 +3,7 @@ import json
 import requests
 from common.recordlog import logs
 from requests import utils
-from  common.readyaml import ReadyamlData
+from common.readyaml import ReadyamlData
 import pytest
 
 class SendRequest(object):
@@ -16,7 +16,7 @@ class SendRequest(object):
         self.read = ReadyamlData()
 
     def send_request(self,**kwargs):
-        cookie ={}
+        cookie = {}
         session = requests.session()
         result = None
         try:
@@ -39,7 +39,7 @@ class SendRequest(object):
 
         return result
 
-    def run_main(self, name,url, case_name, header, merhod,cookies=None,file=None,**kwargs):
+    def run_main(self, name,url, case_name, header, method,cookies=None,file=None,**kwargs):
         '''
         接口请求主函数
         :param url:请求地址
@@ -52,7 +52,7 @@ class SendRequest(object):
         #收集报告日志信息
             logs.info(f'接口名称：{name}')
             logs.info(f'接口请求地址：{url}')
-            logs.info(f'请求方法：{merhod}')
+            logs.info(f'请求方法：{method}')
             logs.info(f'测试用例名称：{case_name}')
             logs.info(f'请求头：{header}')
             logs.info(f'Cookies：{cookies}')
@@ -67,8 +67,8 @@ class SendRequest(object):
         except Exception as e:
             logs.error(e)
 
-        response = self.send_request(merhod = merhod ,url = url ,headers=header,cookies = cookies,files = file,verify=False,
-                          **kwargs)
+        response = self.send_request(method = method,url = url,headers=header,cookies=cookies,files=file,verify=False,
+                                     **kwargs)
 
         return response
 
