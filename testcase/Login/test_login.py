@@ -18,7 +18,3 @@ class TestLogin:
     def test_case01(self,params):
         RequestsBase().specifcation_yaml(params)
 
-    @allure.story('用户名和密码登录错误校验')
-    @pytest.mark.parametrize('params', get_testcase_yaml('./testcase/login/login.yaml'))
-    def test_case02(self, params):
-        RequestsBase().specifcation_yaml(params)

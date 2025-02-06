@@ -3,7 +3,7 @@ import json
 import requests
 from common.recordlog import logs
 from requests import utils
-from common.readyaml import ReadyamlData
+from common.read import ReadyamlData
 import pytest
 import allure
 class SendRequest(object):
@@ -26,6 +26,7 @@ class SendRequest(object):
                 cookie['Cookie'] = set_cookies
                 self.read.write_yaml_data(set_cookies)
                 logs.info(f'cookie:{cookie}')
+            # formatted_response = json.dumps(result.json(), indent=4, ensure_ascii=False)
             logs.info(f'接口实际返回信息：{result}')
         except requests.exceptions.ConnectionError:
             logs.error('接口连接服务器异常！！！')

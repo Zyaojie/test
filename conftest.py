@@ -1,8 +1,8 @@
 import pytest
-
-@pytest.fixture(scope="session",autouse=True)
+from common.recordlog import logs
+@pytest.fixture(scope="class",autouse=True)
 def fixture_test():
     '''前后置处理'''
-    print('————————————————接口测试开始————————————————')
+    logs.info('————————————————接口测试开始————————————————')
     yield
-    print('————————————————接口测试结束————————————————')
+    logs.info('————————————————接口测试结束————————————————')
