@@ -3,7 +3,7 @@ import json
 import requests
 from common.recordlog import logs
 from requests import utils
-from common.read import ReadyamlData
+from common.readyaml import ReadyamlData
 import pytest
 import allure
 class SendRequest(object):
@@ -26,8 +26,8 @@ class SendRequest(object):
                 cookie['Cookie'] = set_cookies
                 self.read.write_yaml_data(set_cookies)
                 logs.info(f'cookie:{cookie}')
-            # formatted_response = json.dumps(result.json(), indent=4, ensure_ascii=False)
-            logs.info(f'接口实际返回信息：{result}')
+            formatted_response = json.dumps(result.json(), indent=4, ensure_ascii=False)
+            logs.info(f'接口实际返回信息：\n{formatted_response}')
         except requests.exceptions.ConnectionError:
             logs.error('接口连接服务器异常！！！')
             pytest.fail('接口请求异常，可能是request的连接数过多或者请求速度过快导致系统报错')
