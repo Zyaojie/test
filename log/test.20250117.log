@@ -1,0 +1,17 @@
+INFO - 2025-01-17 15:49:31,407 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-01-17 15:49:31,409 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-01-17 15:49:31,409 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-01-17 15:49:31,409 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-01-17 15:49:31,409 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-01-17 15:49:31,410 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-01-17 15:49:31,410 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+ERROR - 2025-01-17 15:49:33,473 - sendrequests.py:31 - [sendrequests:send_request] - 接口连接服务器异常！！！
+INFO - 2025-01-17 15:50:05,190 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-01-17 15:50:05,191 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-01-17 15:50:05,191 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-01-17 15:50:05,191 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-01-17 15:50:05,192 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-01-17 15:50:05,192 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-01-17 15:50:05,192 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-01-17 15:50:05,199 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczNzEwMDIwNSwianRpIjoiNjBhM2Q5MzUtOTgxYS00NWY1LWI4NjUtZDQyMDhlYjUyY2RiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczNzEwMDIwNSwiZXhwIjoxNzM3MTAxMTA1fQ.fbCBK9QVkDyTa3bSsHHnOb3uhvw2wAIaKL_bWNkkGGQ'}}
+INFO - 2025-01-17 15:50:05,199 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>

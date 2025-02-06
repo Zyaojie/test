@@ -1,0 +1,194 @@
+INFO - 2025-02-06 08:49:42,974 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 08:49:42,974 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 08:49:42,974 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 08:49:42,974 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 08:49:42,975 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 08:49:42,975 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 08:49:42,975 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 08:49:42,982 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwMjk4MiwianRpIjoiNWI1ZmJlOTEtZTI0ZC00ODBkLWIwMDktNDc1NjMwMTkyOTVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwMjk4MiwiZXhwIjoxNzM4ODAzODgyfQ.q9sGXkPl9G0IU_93pN4g0lEsLMI-_9eI2M980mSKM0Y'}}
+INFO - 2025-02-06 08:49:42,982 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 08:59:43,627 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 08:59:43,627 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 08:59:43,628 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 08:59:43,628 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 08:59:43,628 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 08:59:43,628 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 08:59:43,628 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 08:59:43,633 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwMzU4MywianRpIjoiMWQ4YmY2NWQtYWVkMi00YzM2LWE1MTEtNGFmOWU2MjllMzk5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwMzU4MywiZXhwIjoxNzM4ODA0NDgzfQ.a-Bqx_78uTmNkna6psHywDstrwNWz2nGNdPUk86_yPc'}}
+INFO - 2025-02-06 08:59:43,633 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:24:03,862 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:24:03,864 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:24:03,864 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:24:03,864 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:24:03,864 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:24:03,864 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:24:03,865 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:24:03,870 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTA0MywianRpIjoiNmRkZjA4OTEtY2RhOS00YzkxLThjZDgtYzFkZTRkYzc1OTM0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTA0MywiZXhwIjoxNzM4ODA1OTQzfQ.74qGbFgvijViks8udN4ZbJtzSSv7b8c7SC-bc5hmmJU'}}
+INFO - 2025-02-06 09:24:03,870 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:30:04,338 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:30:04,339 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:30:04,339 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:30:04,339 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:30:04,339 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:30:04,340 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:30:04,340 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:30:04,345 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTQwNCwianRpIjoiMWZiNDM4ZGItYmM2OC00YWJiLTljNzAtMjgyOWEyMTVmOGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTQwNCwiZXhwIjoxNzM4ODA2MzA0fQ.cO-cA5BWzVI7yuWZZh0gKHEpDf1CN7a5E13PRFipUdg'}}
+INFO - 2025-02-06 09:30:04,345 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:31:58,264 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:31:58,265 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:31:58,270 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTUxOCwianRpIjoiNDYyYjNiM2MtODliNC00NDFiLWEwN2MtNzFmMTgxY2RiNTIwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTUxOCwiZXhwIjoxNzM4ODA2NDE4fQ.vaEoJD265FVUOrBBcnLdguD5szL71SWPyMvKyzXwtx8'}}
+INFO - 2025-02-06 09:31:58,270 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:33:55,293 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:33:55,293 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:33:55,293 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:33:55,293 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:33:55,294 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:33:55,294 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:33:55,294 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:33:55,298 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTYzNSwianRpIjoiMGExYTVlZTYtNTY2MC00ODM0LTliYjgtMjNlNzhjZjJkNjIxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTYzNSwiZXhwIjoxNzM4ODA2NTM1fQ.VwJrjaHm1UxpLKa0Vp7eL1LRoFXvZquQUEj5wtkTyTo'}}
+INFO - 2025-02-06 09:33:55,298 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:34:20,426 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:34:20,427 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:34:20,432 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTY2MCwianRpIjoiNWZlMTZiZWUtOWNiZi00YTQ3LThmMDctYmRmYTQyNTY2NmYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTY2MCwiZXhwIjoxNzM4ODA2NTYwfQ.kzBcJ845iDSxhooUzMHwM7t2ApFa2JmtySXXvQpl5rw'}}
+INFO - 2025-02-06 09:34:20,432 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 09:35:04,993 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 09:35:04,993 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 09:35:04,993 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 09:35:04,994 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 09:35:04,994 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 09:35:04,994 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 09:35:04,994 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 09:35:05,000 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwNTcwNCwianRpIjoiYzFiOGUzYmQtMTEzMi00ZWE1LTkwMjAtYTY3YjU0MGM1ZjcxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwNTcwNCwiZXhwIjoxNzM4ODA2NjA0fQ.glfHAtEeZdA_9XCJCtI-S0fNFGJ9YTx8D88_HVMy_go'}}
+INFO - 2025-02-06 09:35:05,000 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:36:51,760 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:36:51,761 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:36:51,778 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwOTQxMSwianRpIjoiNTU1YTNjOTMtZDY3Yy00OWIwLTkxYmUtMmI3YTM4Nzc4YTE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwOTQxMSwiZXhwIjoxNzM4ODEwMzExfQ._189ptMj-JRHe0jH10-LxXqgvy4TC5e7HVx7nsOXTTU'}}
+INFO - 2025-02-06 10:36:51,778 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:36:51,782 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:36:51,782 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:36:51,783 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:36:51,783 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:36:51,783 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:36:51,783 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:36:51,783 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:36:51,788 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgwOTQxMSwianRpIjoiMzk0MThjODktOTNmZi00ZGViLWIzZmItOWVkZmNiNGE2NWExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgwOTQxMSwiZXhwIjoxNzM4ODEwMzExfQ.CiLPY7ZVe38kV_nSOSAT5PShCNS2qj5hsx7oYipH85A'}}
+INFO - 2025-02-06 10:36:51,788 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:53:04,828 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:53:04,829 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:53:04,835 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMDM4NCwianRpIjoiNjk2OTk5N2EtYzgzMy00ODc3LTliNjYtMTU1NDQ2MmQ3YWViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMDM4NCwiZXhwIjoxNzM4ODExMjg0fQ.DbK1o4XRzYXY4PW0giO1_TQDK-SurwSp-6vw3XSe2AY'}}
+INFO - 2025-02-06 10:53:04,835 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:53:04,839 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:53:04,839 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:53:04,839 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:53:04,840 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:53:04,840 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:53:04,840 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:53:04,840 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:53:04,845 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMDM4NCwianRpIjoiNjEzZTRkMzAtNGRiNS00YWU3LWE2OGYtYjgxNWE1NzcxNDg1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMDM4NCwiZXhwIjoxNzM4ODExMjg0fQ.ZtyyW7S2n_qVLSRsqG9uIuSumZe4ekzXV-yKYmkAcQY'}}
+INFO - 2025-02-06 10:53:04,845 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:57:03,898 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:57:03,899 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:57:03,905 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMDYyMywianRpIjoiMjRhMDNkY2UtZDllOS00NGM5LWJiZmItZjUwZTQyZTk1ZmY3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMDYyMywiZXhwIjoxNzM4ODExNTIzfQ.IW8e4fpC-9EUtRE9JNC8BB-TCavzaQNqBRdQNqy9rHA'}}
+INFO - 2025-02-06 10:57:03,905 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 10:57:03,910 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 10:57:03,914 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMDYyMywianRpIjoiODQyNTU3ZDctMmQxZS00ZWQyLWI2ODYtNDAyMTZmMDk3YmQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMDYyMywiZXhwIjoxNzM4ODExNTIzfQ.ItoePtxwU9bXzHfe8OmPGugAssV9BktSWCRvUy9JmSQ'}}
+INFO - 2025-02-06 10:57:03,914 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:02:07,264 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：null
+INFO - 2025-02-06 11:02:07,265 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:02:07,334 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：null
+INFO - 2025-02-06 11:02:07,335 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:04:10,343 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 11:04:10,344 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:04:10,351 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMTA1MCwianRpIjoiN2U3ODM1MmQtY2M4Ni00N2ZlLWI3MmUtZjI3YzlmMzIyODVmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMTA1MCwiZXhwIjoxNzM4ODExOTUwfQ.Ze6fkddQj7KDzi2YeQFa-tVcGsFVYNB_YSdtKHYYduc'}}
+INFO - 2025-02-06 11:04:10,351 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:04:10,355 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:04:10,355 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:04:10,355 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:04:10,355 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:04:10,355 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:04:10,356 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：{'cookie': 'session:jhfsdjksfsdf'}
+INFO - 2025-02-06 11:04:10,356 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:04:10,360 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMTA1MCwianRpIjoiMWY4OTNlMjMtNGE5ZS00YTZjLWJhNDktODIxNzRiZWU2YzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMTA1MCwiZXhwIjoxNzM4ODExOTUwfQ.KcdJuPxX2uXjQm_hWlsN4UfZ5l0NPBWtDdH5M23WwEg'}}
+INFO - 2025-02-06 11:04:10,360 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:20:13,619 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:20:13,619 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:20:13,619 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:20:13,619 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:20:13,619 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:20:13,620 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：None
+INFO - 2025-02-06 11:20:13,620 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:20:13,627 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMjAxMywianRpIjoiZTlkNWVlMjQtMWYzOC00MTVkLTg1NDItNjliNjAzNjQzMWIzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMjAxMywiZXhwIjoxNzM4ODEyOTEzfQ.axoNXwZ8aDyNoxx9h6HPrC9RA0jK9iw7YNGPqFRYNgw'}}
+INFO - 2025-02-06 11:20:13,627 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：None
+INFO - 2025-02-06 11:20:13,631 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:20:13,637 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMjAxMywianRpIjoiYThjYzFiOTQtMGIzMS00YjhhLTk1MmQtNGZiNjI3ZjdjNDBlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMjAxMywiZXhwIjoxNzM4ODEyOTEzfQ.K66Ht2Rbedhg-polUFEhCcJlfDSaVDfzx2pekCunOdM'}}
+INFO - 2025-02-06 11:20:13,637 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:24:17,776 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:24:17,776 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:24:17,777 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:24:17,777 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:24:17,777 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:24:17,777 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：None
+INFO - 2025-02-06 11:24:17,777 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:24:17,782 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMjI1NywianRpIjoiMTczZTZmMGYtMGFiNC00MWVkLWI3MzAtNmI1YzAwYzM5Yjk1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMjI1NywiZXhwIjoxNzM4ODEzMTU3fQ.Cac4kZlpA9LS6Yq71pue1RDoU51hHyVi_5ZlfX3IToY'}}
+INFO - 2025-02-06 11:24:17,782 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>
+INFO - 2025-02-06 11:24:17,786 - sendrequests.py:53 - [sendrequests:run_main] - 接口名称：用户登录
+INFO - 2025-02-06 11:24:17,786 - sendrequests.py:54 - [sendrequests:run_main] - 接口请求地址：http://127.0.0.1:8787/dar/user/login
+INFO - 2025-02-06 11:24:17,786 - sendrequests.py:55 - [sendrequests:run_main] - 请求方法：post
+INFO - 2025-02-06 11:24:17,786 - sendrequests.py:56 - [sendrequests:run_main] - 测试用例名称：用户名和密码正确登录
+INFO - 2025-02-06 11:24:17,786 - sendrequests.py:57 - [sendrequests:run_main] - 请求头：{"Content-Type'": 'application/x-www-form-urlencoded;charset=UTF-8', 'token': '${get_extract_data(product_id,1)}'}
+INFO - 2025-02-06 11:24:17,787 - sendrequests.py:58 - [sendrequests:run_main] - Cookies：None
+INFO - 2025-02-06 11:24:17,787 - sendrequests.py:62 - [sendrequests:run_main] - 请求参数:{'data': {'user_name': 'test01', 'passwd': 'admin123'}}
+INFO - 2025-02-06 11:24:17,791 - sendrequests.py:28 - [sendrequests:send_request] - cookie:{'Cookie': {'access_token_cookie': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczODgxMjI1NywianRpIjoiZmNiZTdjOTMtNzM2Mi00ZGQ3LTkwMDgtNDk1M2I1MzBhYWU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImV4YW1wbGVfdXNlciIsIm5iZiI6MTczODgxMjI1NywiZXhwIjoxNzM4ODEzMTU3fQ.UjPixPBBvTBw03oo_OF1j17_HBgvoxwYdcvjbgYvtqM'}}
+INFO - 2025-02-06 11:24:17,791 - sendrequests.py:29 - [sendrequests:send_request] - 接口实际返回信息：<Response [200]>

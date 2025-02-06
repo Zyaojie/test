@@ -5,7 +5,7 @@ from common.recordlog import logs
 from requests import utils
 from common.readyaml import ReadyamlData
 import pytest
-
+import allure
 class SendRequest(object):
 
     '''
@@ -60,10 +60,14 @@ class SendRequest(object):
             req_params = json.dumps(kwargs,ensure_ascii=False)
             if 'data' in kwargs.keys():
                 logs.info(f'请求参数:{kwargs}')
+                allure.attach(req_params, f'请求参数：{req_params}', allure.attachment_type.TEXT)
             elif 'json' in kwargs.keys():
                 logs.info(f'请求参数:{kwargs}')
+                allure.attach(req_params, f'请求参数：{req_params}', allure.attachment_type.TEXT)
             elif 'params' in kwargs.keys():
                 logs.info(f'请求参数:{kwargs}')
+                allure.attach(req_params, f'请求参数：{req_params}', allure.attachment_type.TEXT)
+
         except Exception as e:
             logs.error(e)
 

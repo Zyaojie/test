@@ -6,7 +6,8 @@ import allure
 from common.sendrequests import SendRequest
 from common.recordlog import logs
 from conf.setting import FILE_PATA
-
+from common.recordlog import logs
+import allure
 class RequestsBase(object):
 
     def __init__(self):
@@ -44,30 +45,61 @@ class RequestsBase(object):
     def specifcation_yaml(self, case_info):
         """
         规范yaml接口测试数据的写法
-        :param case_info:list类型，调试取case_info[0]
+        :param case_info: list类型，调试取case_info[0]
         :return:
         """
-        params_type = ['params', 'data', 'json']
-        base_url = self.conf.get_envi('host')
-        url = base_url + case_info['baseInfo']['url']
-        api_name = case_info['baseInfo']['api_name']
-        method = case_info['baseInfo']['method']
-        header = case_info['baseInfo']['header']
-        cookie = self.replace_load(case_info['baseInfo']['cookies'])
+        global cookie
+        cookie = None  # 初始化 cookie 变量
 
-        for tc in case_info['testCase']:
-            case_name = tc.pop('case_name')
-            validation = tc.pop('validation')
-            extract = tc.pop('extract', None)
-            extract_list = tc.pop('extract_list', None)
-            for key, value in tc.items():
-                if key in params_type:
-                    tc[key] = self.replace_load(value)
-            res = self.send.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
-                                     cookies=cookie, file=None,
-                                     **tc)
-            print(res.text)
 
+        try:
+            params_type = ['params', 'data', 'json']
+            base_url = self.conf.get_envi('host')
+            url = base_url + case_info['baseInfo']['url']
+            allure.attach(url, f'接口地址：{url}')
+            api_name = case_info['baseInfo']['api_name']
+            allure.attach(api_name, f'接口名称：{api_name}')
+            method = case_info['baseInfo']['method']
+            allure.attach(method, f'请求方法：{method}')
+            header = case_info['baseInfo']['header']
+            allure.attach(str(header), f'请求头：{header}', allure.attachment_type.TEXT)
+
+            try:
+                cookie = self.replace_load(case_info['baseInfo']['cookies'])
+                allure.attach(cookie, f'cookie：{cookie}'),allure.attachment_type.TEXT
+            except:
+                pass
+            for tc in case_info['testCase']:
+                case_name = tc.pop('case_name')
+                allure.attach(case_name, f'测试用例名称：{case_name}')
+                validation = tc.pop('validation')
+                extract = tc.pop('extract', None)
+                extract_list = tc.pop('extract_list', None)
+                for key, value in tc.items():
+                    if key in params_type:
+                        tc[key] = self.replace_load(value)
+                res = self.send.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
+                                         cookies=cookie, file=None,
+                                         **tc)
+                allure.attach(res.text, f'接口的响应信息：{res.text}',allure.attachment_type.TEXT)
+
+
+                if extract is not None:
+                    pass
+                if extract_list is not None:
+                    pass
+
+        except Exception as e:
+            logs.error(e)
+            raise e
+
+    def extract_data(self,testcase_extract,response):
+        """
+        提取接口返回值，支持正则表达式提取以及json提取器
+        :param testcase_extract:
+        :param response:
+        :return:
+        """
 
 if __name__ == '__main__':
     req = RequestsBase()
