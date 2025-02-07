@@ -22,8 +22,18 @@ class Debugtaik:
         :param random: 随机读取extract.yaml中的数据
         :return:
         '''
-
+        # 获取 extract.yaml 内容
         data = self.read.get_extract_yaml(node_name)
+
+        # 输出调试信息，确认数据读取问题
+        print(f"读取到的 data：{data}")
+
+        # 如果数据为空，则返回默认值
+        if not data:
+            print(f"警告：无法提取到 {node_name} 的数据，返回默认值")
+            return []  # 返回空列表或其他默认值
+
+        # 如果有随机参数，则随机选择数据
         if randoms is not None:
             randoms = int(randoms)
             data_value = {
@@ -33,6 +43,7 @@ class Debugtaik:
                 -2: ', '.join(data).split(',')  # 将读取出来的数据转换为列表
             }
             data = data_value[randoms]
+
         return data
 
     def md5_params(self, params):
