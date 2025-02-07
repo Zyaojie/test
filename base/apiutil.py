@@ -52,7 +52,6 @@ class RequestsBase(object):
 
         cookie = None  # 初始化 cookie 变量
 
-
         try:
             params_type = ['params', 'data', 'json']
             base_url = self.conf.get_envi('host')
@@ -67,7 +66,7 @@ class RequestsBase(object):
 
             try:
                 cookie = self.replace_load(case_info['baseInfo']['cookies'])
-                allure.attach(cookie, f'cookie：{cookie}'),allure.attachment_type.TEXT
+                allure.attach(cookie, f'cookie：{cookie}'), allure.attachment_type.TEXT
             except:
                 pass
             for tc in case_info['testCase']:
@@ -83,14 +82,13 @@ class RequestsBase(object):
                                          cookies=cookie, file=None,
                                          **tc)
                 res_text = res.text
-                allure.attach(res.text, f'接口的响应信息:{res.text}',allure.attachment_type.TEXT)
+                allure.attach(res.text, f'接口的响应信息:{res.text}', allure.attachment_type.TEXT)
                 allure.attach(str(res.status_code), f'接口的状态码：{res.status_code}', allure.attachment_type.TEXT)
 
-
                 if extract is not None:
-                    self.extract_data(extract,res_text)
+                    self.extract_data(extract, res_text)
                 if extract_list is not None:
-                    self.extract_data_list(extract_list,res_text)
+                    self.extract_data_list(extract_list, res_text)
 
         except Exception as e:
             logs.error(e)

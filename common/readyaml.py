@@ -43,7 +43,7 @@ class ReadyamlData:
             # file =  open(file_path,'a（a=追加读写，w=清空读写）',encoding='utf-8')    使用此方法打开文件后需要在最后添加关闭文件的操作
                 # finally:
                 #     file.close()
-            with open(file_path, 'w', encoding='utf-8') as file:    #使用此方法打开文件不需要进行关闭文件的操作
+            with open(file_path, 'a', encoding='utf-8') as file:    #使用此方法打开文件不需要进行关闭文件的操作
 
                 if isinstance(value,dict):
                     write_data = yaml.dump(value,allow_unicode=True,sort_keys=False)
