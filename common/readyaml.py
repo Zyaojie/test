@@ -30,49 +30,65 @@ class ReadyamlData:
         else:
             self.yaml_fine = 'login.yaml'
 
-    def write_yaml_data(self,value):
+    def write_yaml_data(self, value):
         '''写入数据到yaml文件
         ：param value: （dict）写入的数据
         ：return：
         '''
-        file = None
-        file_path = FILE_PATA['extract']
-        if not os.path.exists(file_path):
-            os.system(file_path)
-        try:
-            # file =  open(file_path,'a（a=追加读写，w=清空读写）',encoding='utf-8')    使用此方法打开文件后需要在最后添加关闭文件的操作
-                # finally:
-                #     file.close()
-            with open(file_path, 'a', encoding='utf-8') as file:    #使用此方法打开文件不需要进行关闭文件的操作
+        file_path = 'D:/api-test/extract.yaml'  # 使用统一路径
+        print(f"写入文件的路径：{file_path}")  # 打印文件路径，确认是否正确
 
-                if isinstance(value,dict):
-                    write_data = yaml.dump(value,allow_unicode=True,sort_keys=False)
-                    file.write(write_data)
-                else:
-                    print('写入到【extract】的数据必须为字典类型！！！')
-        except  Exception as e:
+        # 确保文件夹存在
+        folder_path = os.path.dirname(file_path)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)  # 创建文件夹
+
+        try:
+            # 先读取文件内容
+            with open(file_path, 'r', encoding='utf-8') as file:
+                content = yaml.safe_load(file)
+
+            # 如果内容是字典，更新其中的键值对
+            if isinstance(content, dict) and isinstance(value, dict):
+                content.update(value)
+            else:
+                content = value  # 如果不是字典，直接覆盖原有内容
+
+            # 写入修改后的内容
+            with open(file_path, 'w', encoding='utf-8') as file:
+                write_data = yaml.dump(content, allow_unicode=True, sort_keys=False)
+                file.write(write_data)
+                print(f"写入的数据：{write_data}")  # 打印写入的数据，帮助调试
+
+        except Exception as e:
             print(e)
 
-    def get_extract_yaml(self,node_name):
+    def get_extract_yaml(self, node_name):
         '''
         读取接口提取的变量值
-        :param node_name:yaml中的key值
+        :param node_name: yaml中的key值
         :return:
         '''
-        if os.path.exists('../extract.yaml'):
-            pass
-        else:
-            print('extract.yaml不存在')
-            file = open('../extract.yaml', 'w')
-            file.close()
-            print('extract.yaml创建成功')
+        # 检查文件路径是否正确
+        file_path = '../extract.yaml'
+        if not os.path.exists(file_path):
+            print(f"extract.yaml 不存在，正在创建：{file_path}")
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.close()
+            print('extract.yaml 创建成功')
 
-
-        with open('../extract.yaml', 'r', encoding='utf-8') as rf:
+        # 读取 YAML 文件
+        with open(file_path, 'r', encoding='utf-8') as rf:
             extract_data = yaml.safe_load(rf)
-            return extract_data[node_name]
 
+        print(f"读取到的 extract.yaml 内容：{extract_data}")  # 输出文件内容，帮助调试
 
+        # 检查 key 是否存在
+        if node_name not in extract_data:
+            print(f"警告：extract.yaml 中没有找到 {node_name} 这个键")
+            return []  # 返回空列表或默认值
+
+        return extract_data[node_name]
 
 
 if __name__ == '__main__':
