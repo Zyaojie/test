@@ -35,7 +35,7 @@ class ReadyamlData:
         ：param value: （dict）写入的数据
         ：return：
         '''
-        file_path = 'D:/api-test/extract.yaml'  # 使用统一路径
+        file_path = FILE_PATA['extract']  # 使用统一路径
         print(f"写入文件的路径：{file_path}")  # 打印文件路径，确认是否正确
 
         # 确保文件夹存在
@@ -48,11 +48,19 @@ class ReadyamlData:
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = yaml.safe_load(file)
 
+            #过滤掉 access_token_cookie
+            if "access_token_cookie" in value:
+                print("移除 access_token_cookie，不写入文件")
+                del value["access_token_cookie"]
             # 如果内容是字典，更新其中的键值对
             if isinstance(content, dict) and isinstance(value, dict):
                 content.update(value)
             else:
                 content = value  # 如果不是字典，直接覆盖原有内容
+
+            # 再次确保 access_token_cookie 不存在
+            if "access_token_cookie" in content:
+                del content["access_token_cookie"]
 
             # 写入修改后的内容
             with open(file_path, 'w', encoding='utf-8') as file:
@@ -63,30 +71,31 @@ class ReadyamlData:
         except Exception as e:
             print(e)
 
+
+    def clear_yaml_data(self):
+        """清空extract.yaml文件数据"""
+        with open(FILE_PATA['extract'],'w') as f:
+            f.truncate()
     def get_extract_yaml(self, node_name):
         '''
         读取接口提取的变量值
         :param node_name: yaml中的key值
         :return:
         '''
-        # 检查文件路径是否正确
-        file_path = '../extract.yaml'
-        if not os.path.exists(file_path):
-            print(f"extract.yaml 不存在，正在创建：{file_path}")
-            with open(file_path, 'w', encoding='utf-8') as file:
-                file.close()
-            print('extract.yaml 创建成功')
+        file_path = FILE_PATA['extract']  # 统一文件路径
 
-        # 读取 YAML 文件
+        if not os.path.exists(file_path):
+            print(f"文件 {file_path} 不存在")
+            return []  # 如果文件不存在返回空列表
+
         with open(file_path, 'r', encoding='utf-8') as rf:
             extract_data = yaml.safe_load(rf)
 
-        print(f"读取到的 extract.yaml 内容：{extract_data}")  # 输出文件内容，帮助调试
+        print(f"extract.yaml 内容：{extract_data}")  # 输出文件内容，帮助调试
 
-        # 检查 key 是否存在
         if node_name not in extract_data:
             print(f"警告：extract.yaml 中没有找到 {node_name} 这个键")
-            return []  # 返回空列表或默认值
+            return []  # 返回一个空列表或其他默认值
 
         return extract_data[node_name]
 

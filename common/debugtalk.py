@@ -26,7 +26,7 @@ class Debugtaik:
         data = self.read.get_extract_yaml(node_name)
 
         # 输出调试信息，确认数据读取问题
-        print(f"读取到的 data：{data}")
+        print(type(f"读取到的 data：{data}"))
 
         # 如果数据为空，则返回默认值
         if not data:

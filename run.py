@@ -8,4 +8,4 @@ import os
 
 if __name__ == '__main__':
     pytest.main()
-    # os.system(r'allure serve ./report/temp')  # 使用原始字符串避免转义问题
+    os.system(r'allure serve ./report/temp')  # 使用原始字符串避免转义问题

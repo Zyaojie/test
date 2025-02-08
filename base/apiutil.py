@@ -19,28 +19,39 @@ class RequestsBase(object):
         self.send = SendRequest()
 
     def replace_load(self, data):
-        '''yaml文件替换解析{}格式的数据'''
-        str_data = data
-        if not isinstance(data, str):
-            str_data = json.dumps(data, ensure_ascii=False)
-        for i in range(str_data.count('${')):
-            if '${' in str_data and '}' in str_data:
-                # index检测字符串是否子字符串，并找到字符串的索引位置
-                start_index = str_data.index('$')
-                end_index = str_data.index('}', start_index)
-                ref_all_params = str_data[start_index:end_index + 1]
-                # 取出函数名
-                func_name = ref_all_params[2:ref_all_params.index('(')]
-                # 取出函数中的参数值
-                funcs_params = ref_all_params[ref_all_params.index('(') + 1:ref_all_params.index(')')]
-                # 传入替换的参数获取对应的值
-                extract_data = getattr(Debugtaik(), func_name)(*funcs_params.split(',') if funcs_params else '')
+        '''递归替换 YAML 文件中的 ${} 格式占位符'''
 
-        if data and isinstance(data, dict):
-            data = json.loads(str_data)
-        else:
-            data = str_data
+        # **递归处理字典**
+        if isinstance(data, dict):
+            return {key: self.replace_load(value) for key, value in data.items()}
 
+        # **递归处理列表**
+        elif isinstance(data, list):
+            return [self.replace_load(item) for item in data]
+
+        # **处理字符串中的占位符**
+        elif isinstance(data, str):
+            while '${' in data and '}' in data:
+                start_index = data.index('${')
+                end_index = data.index('}', start_index)
+
+                ref_all_params = data[start_index:end_index + 1]  # 获取完整的占位符
+                func_name = ref_all_params[2:ref_all_params.index('(')]  # 获取方法名
+                funcs_params = ref_all_params[ref_all_params.index('(') + 1:ref_all_params.index(')')]  # 获取参数
+
+                try:
+                    # 调用 Debugtaik 的方法，传入参数
+                    if funcs_params:
+                        param_list = funcs_params.split(',')
+                        extract_data = getattr(Debugtaik(), func_name)(*param_list)
+                    else:
+                        extract_data = getattr(Debugtaik(), func_name)()
+
+                    # 替换占位符
+                    data = data.replace(ref_all_params, str(extract_data))
+
+                except Exception as e:
+                    print(f"调用 {func_name} 失败: {e}")
         return data
 
     def specifcation_yaml(self, case_info):
@@ -66,21 +77,24 @@ class RequestsBase(object):
 
             try:
                 cookie = self.replace_load(case_info['baseInfo']['cookies'])
-                allure.attach(cookie, f'cookie：{cookie}'), allure.attachment_type.TEXT
+                allure.attach(cookie, f'cookie：{cookie}', allure.attachment_type.TEXT)
             except:
                 pass
+
             for tc in case_info['testCase']:
                 case_name = tc.pop('case_name')
                 allure.attach(case_name, f'测试用例名称：{case_name}')
                 validation = tc.pop('validation')
                 extract = tc.pop('extract', None)
                 extract_list = tc.pop('extract_list', None)
+
+                # 替换每个测试用例中的 params, data, json 字段
                 for key, value in tc.items():
                     if key in params_type:
                         tc[key] = self.replace_load(value)
+
                 res = self.send.run_main(name=api_name, url=url, case_name=case_name, header=header, method=method,
-                                         cookies=cookie, file=None,
-                                         **tc)
+                                         cookies=cookie, file=None, **tc)
                 res_text = res.text
                 allure.attach(res.text, f'接口的响应信息:{res.text}', allure.attachment_type.TEXT)
                 allure.attach(str(res.status_code), f'接口的状态码：{res.status_code}', allure.attachment_type.TEXT)
