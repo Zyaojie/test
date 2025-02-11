@@ -10,6 +10,10 @@ from common.recordlog import logs
 import allure
 import re
 import jsonpath
+from common.assertions import Assertions
+
+assert_res = Assertions()
+
 
 class RequestsBase(object):
 
@@ -99,16 +103,20 @@ class RequestsBase(object):
                 allure.attach(res.text, f'接口的响应信息:{res.text}', allure.attachment_type.TEXT)
                 allure.attach(str(res.status_code), f'接口的状态码：{res.status_code}', allure.attachment_type.TEXT)
 
+                res_json = res.json()
                 if extract is not None:
                     self.extract_data(extract, res_text)
                 if extract_list is not None:
                     self.extract_data_list(extract_list, res_text)
 
+                # 处理接口断言
+                assert_res.assert_result(validation, res_json, res.status_code)
+
         except Exception as e:
             logs.error(e)
             raise e
 
-    def extract_data(self,testcase_extract,response):
+    def extract_data(self, testcase_extract, response):
         """
         提取接口返回值，支持正则表达式提取以及json提取器
         :param testcase_extract:
@@ -116,25 +124,25 @@ class RequestsBase(object):
         :return:
         """
         try:
-            pattenr_lst = ['(.+?)','(.*?)',r'(\d+)',r'(\d*)']
-            for key,value in testcase_extract.items():
-                #处理正则表达式的提取
+            pattenr_lst = ['(.+?)', '(.*?)', r'(\d+)', r'(\d*)']
+            for key, value in testcase_extract.items():
+                # 处理正则表达式的提取
                 for pat in pattenr_lst:
                     if pat in value:
-                        ext_list = re.search(value,response)
-                        if pat in [r'(\d+)',r'(\d*)']:
-                            extract_data = {key:int(ext_list.group(1))}
+                        ext_list = re.search(value, response)
+                        if pat in [r'(\d+)', r'(\d*)']:
+                            extract_data = {key: int(ext_list.group(1))}
                         else:
                             extract_data = {key: ext_list.group(1)}
                         logs.info(f'正则表达式提取到的参数：{extract_data}')
                         self.read.write_yaml_data(extract_data)
-                #处理json提取器
+                # 处理json提取器
                 if "$" in value:
-                    ext_json = jsonpath.jsonpath(json.loads(response),value)[0]
+                    ext_json = jsonpath.jsonpath(json.loads(response), value)[0]
                     if ext_json:
-                        extract_data ={key:ext_json}
+                        extract_data = {key: ext_json}
                     else:
-                        extract_data = {key:'未提取到数据，该接口返回值为空或者json提取表达式有误！'}
+                        extract_data = {key: '未提取到数据，该接口返回值为空或者json提取表达式有误！'}
                     logs.info(f'json提取器提取到的参数：{extract_data}')
                     self.read.write_yaml_data(extract_data)
         except:
@@ -166,6 +174,7 @@ class RequestsBase(object):
                     self.read.write_yaml_data(extract_date)
         except:
             logs.error('接口返回值提取异常，请检查yaml文件extract_list表达式是否正确！')
+
 
 if __name__ == '__main__':
     req = RequestsBase()

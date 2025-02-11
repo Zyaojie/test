@@ -7,7 +7,7 @@
   testCase:
     - case_name: 获取商品详情信息
       json:
-        pro_id: ${get_extract_data(goodsid, 0)}  # 随机获取一个商品 ID
+        pro_id: ${get_extract_data_list(goodsid, 2)}  # 随机获取一个商品 ID
         page: 1
         size: 20
       validation:

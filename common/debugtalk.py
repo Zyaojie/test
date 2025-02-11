@@ -11,17 +11,17 @@ class Debugtaik:
     def __init__(self):
         self.read = ReadyamlData()
 
-    def get_extract_order_data(self, data, randoms):
+    def get_extract_order_data(self,data,randoms):
+        """获取extract.yaml数据，不为0，-1，-2的情况，就按照去读取key里面的数据"""
         if randoms not in [0, -1, -2]:
             return data[randoms - 1]
-
-    def get_extract_data(self, node_name, randoms=None):
+    def get_extract_data_list(self,node_name,randoms=None):
         '''
-        获取extract.yaml中的数据
-        :param node_name: 获取extract.yaml中的key值
-        :param random: 随机读取extract.yaml中的数据
-        :return:
-        '''
+               获取extract.yaml中的数据
+               :param node_name: 获取extract.yaml中的key值
+               :param random: 随机读取extract.yaml中的数据
+               :return:
+               '''
         # 获取 extract.yaml 内容
         data = self.read.get_extract_yaml(node_name)
 
@@ -43,6 +43,22 @@ class Debugtaik:
                 -2: ', '.join(data).split(',')  # 将读取出来的数据转换为列表
             }
             data = data_value[randoms]
+
+        return data
+
+    def get_extract_order_data(self, data, randoms):
+        if randoms not in [0, -1, -2]:
+            return data[randoms - 1]
+
+    def get_extract_data(self, node_name,sec_node_name=None):
+        '''
+        获取extract.yaml中的数据
+        :param node_name: 获取extract.yaml中的key值
+        :param random: 随机读取extract.yaml中的数据
+        :return:
+        '''
+        # 获取 extract.yaml 内容
+        data = self.read.get_extract_yaml(node_name,sec_node_name)
 
         return data
 
