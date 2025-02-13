@@ -1,0 +1,19 @@
+<environment>
+    <parameter>
+        <key>system</key>
+        <value>window 10</value>
+    </parameter>
+    <parameter>
+        <key>python version</key>
+        <value>3.11.2</value>
+    </parameter>
+    <parameter>
+        <key>allure version</key>
+        <value>allure-2.13.5</value>
+    </parameter>
+    <parameter>
+        <key>项目名</key>
+        <value>商城项目接口自动化测试</value>
+    </parameter>
+
+</environment>
